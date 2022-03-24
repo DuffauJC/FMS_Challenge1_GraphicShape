@@ -43,7 +43,7 @@ public class Circle extends Shape{
 
 	@Override
 	public String toString() {
-		return "Circle : radius=" + radius;
+		return "Circle : radius=" + radius +" "+ super.toString();
 	}
 
 
