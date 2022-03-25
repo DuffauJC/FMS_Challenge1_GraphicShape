@@ -7,6 +7,7 @@ import java.util.Map;
 import fr.fms.entities.Shape;
 import fr.fms.entities.Square;
 
+
 public class IJobImpl implements IJob {
 	private Map<Integer, Shape> shapes;
 	
@@ -39,7 +40,7 @@ public class IJobImpl implements IJob {
 	
 	@Override
 	public void drawShape() {
-		//TODO
+				
 	}
 	
 	@Override
@@ -54,7 +55,7 @@ public class IJobImpl implements IJob {
 		while(it.hasNext()) {
 			Shape shape = it.next();
 			if(shape instanceof Square) {
-				System.out.println(shape + " périmètre = " + ((Square)shape).perimeter());
+				System.out.println(shape + " pÃ©rimÃ¨tre = " + ((Square)shape).perimeter());
 			}
 		}
 	}

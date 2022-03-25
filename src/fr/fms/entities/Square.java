@@ -26,6 +26,11 @@ public class Square extends Shape {
 		
 	}
 	
+	public void drawShape() {
+
+		//g.drawRect(getCenter().getX(),getCenter().getY(), (int)Math.sqrt(area()), (int)Math.sqrt(area()));
+	}
+	
 	public double area() {
 		return this.side * this.side;
 	}

@@ -1,5 +1,6 @@
 package fr.fms.entities;
 
+
 public class Circle extends Shape{
 
 	private double radius;
@@ -39,6 +40,11 @@ public class Circle extends Shape{
 	public double area() {
 		return Math.PI *this.radius*this.radius;
 		//return super.area();
+	}
+	
+	
+	public void drawShape() {
+		//g.fillOval(getCenter().getX(), getCenter().getY(), (int)Math.sqrt(area()), (int)Math.sqrt(area()));
 	}
 
 	@Override
