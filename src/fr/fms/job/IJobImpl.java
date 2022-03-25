@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.Map;
 import fr.fms.entities.Shape;
 import fr.fms.entities.Square;
+import fr.fms.graphic.Graphic;
 
 
 public class IJobImpl implements IJob {
@@ -39,7 +40,8 @@ public class IJobImpl implements IJob {
 	
 	@Override
 	public void drawShape() {
-				
+		new Graphic(getShapes());
+
 	}
 	
 	public Map<Integer, Shape> getShapes() {

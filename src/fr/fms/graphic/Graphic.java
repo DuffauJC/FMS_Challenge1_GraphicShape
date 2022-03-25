@@ -19,14 +19,6 @@ public class Graphic extends JFrame {
 
 	private Map<Integer, Shape> shapes = new HashMap<Integer, Shape>();
 
-	public Map<Integer, Shape> getShapes() {
-		return shapes;
-	}
-
-	public void setShapes(Map<Integer, Shape> shapes) {
-		this.shapes = shapes;
-	}
-
 	public Graphic(Map<Integer, Shape> shapes) throws HeadlessException {
 		super("Voici nos formes de poire !");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -36,19 +28,16 @@ public class Graphic extends JFrame {
 		this.shapes = shapes;
 	}
 
-
-
 	@Override
 	public void paint(Graphics g) { // le repère en haut à gauche (0,0)
 		super.paint(g);
-		
+
 		for (Shape s : shapes.values()) {
 			if (s!=null) {
 				s.drawShape(g);
 			}
 		}
 
-	
 	}
 
 	public static void main(String[] args) {

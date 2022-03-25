@@ -21,7 +21,7 @@ public class TestJob {
 		job.displayAll();
 		System.out.println("---------------------------------");
 		job.squaresPerimeter();
-		new Graphic(job.getShapes());
+		job.drawShape();
 
 	
 	}
