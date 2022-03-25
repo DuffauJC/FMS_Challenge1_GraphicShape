@@ -29,7 +29,7 @@ public class Square extends Shape {
 	
 	public void drawShape(Graphics g) {
 
-		g.drawRect(getCenter().getX(),getCenter().getY(), (int)Math.sqrt(area()), (int)Math.sqrt(area()));
+		g.drawRect(getCenter().getX(),getCenter().getY(), (int)side, (int)side);
 	}
 	
 	public double area() {

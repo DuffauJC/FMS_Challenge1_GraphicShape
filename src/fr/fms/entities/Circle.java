@@ -45,7 +45,7 @@ public class Circle extends Shape{
 	
 	
 	public void drawShape(Graphics g) {
-		g.fillOval(getCenter().getX(), getCenter().getY(), (int)Math.sqrt(area()), (int)Math.sqrt(area()));
+		g.fillOval(getCenter().getX(), getCenter().getY(), (int)radius*2, (int)radius*2);
 	}
 
 	@Override

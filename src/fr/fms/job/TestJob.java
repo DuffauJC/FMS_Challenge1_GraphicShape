@@ -9,11 +9,7 @@ import fr.fms.graphic.Graphic;
 
 public class TestJob {
 	
-	
-	
 	public static void main(String[] args) {
-		
-		
 		
 		IJobImpl job = new IJobImpl();
 		job.addShape(1,new Circle(20,30,50));
@@ -24,15 +20,10 @@ public class TestJob {
 		
 		job.displayAll();
 		System.out.println("---------------------------------");
+		job.squaresPerimeter();
 		new Graphic(job.getShapes());
-		//job.deleteShape(1);
-		//job.moveShape(3, 20, 30);
-		//job.displayAll();
-		//System.out.println("---------------------------------");
-		
-		
+
+	
 	}
 	
-	
-
 }
