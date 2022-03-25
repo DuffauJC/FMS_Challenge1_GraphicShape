@@ -28,7 +28,7 @@ public abstract class Shape {
 		return 0;
 	}
 	
-	public void drawShape() {
+	public void drawShape(Graphics g) {
 		
 	}
 

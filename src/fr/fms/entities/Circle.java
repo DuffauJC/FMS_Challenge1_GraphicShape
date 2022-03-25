@@ -1,5 +1,6 @@
 package fr.fms.entities;
 
+import java.awt.Graphics;
 
 public class Circle extends Shape{
 
@@ -43,8 +44,8 @@ public class Circle extends Shape{
 	}
 	
 	
-	public void drawShape() {
-		//g.fillOval(getCenter().getX(), getCenter().getY(), (int)Math.sqrt(area()), (int)Math.sqrt(area()));
+	public void drawShape(Graphics g) {
+		g.fillOval(getCenter().getX(), getCenter().getY(), (int)Math.sqrt(area()), (int)Math.sqrt(area()));
 	}
 
 	@Override

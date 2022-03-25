@@ -1,4 +1,5 @@
 package fr.fms.entities;
+import java.awt.Graphics;
 
 public class Square extends Shape {
 	private double side;
@@ -26,9 +27,9 @@ public class Square extends Shape {
 		
 	}
 	
-	public void drawShape() {
+	public void drawShape(Graphics g) {
 
-		//g.drawRect(getCenter().getX(),getCenter().getY(), (int)Math.sqrt(area()), (int)Math.sqrt(area()));
+		g.drawRect(getCenter().getX(),getCenter().getY(), (int)Math.sqrt(area()), (int)Math.sqrt(area()));
 	}
 	
 	public double area() {

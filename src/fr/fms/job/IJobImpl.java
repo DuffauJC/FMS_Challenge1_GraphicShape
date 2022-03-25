@@ -1,11 +1,13 @@
 package fr.fms.job;
 
+import java.awt.Graphics;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
 import fr.fms.entities.Shape;
 import fr.fms.entities.Square;
+import fr.fms.graphic.Graphic;
 
 
 public class IJobImpl implements IJob {
@@ -43,6 +45,10 @@ public class IJobImpl implements IJob {
 				
 	}
 	
+	public Map<Integer, Shape> getShapes() {
+		return shapes;
+	}
+
 	@Override
 	public void displayAll() {
 		for(Shape s : shapes.values()) {
@@ -59,4 +65,5 @@ public class IJobImpl implements IJob {
 			}
 		}
 	}
+
 }
