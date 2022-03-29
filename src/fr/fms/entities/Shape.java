@@ -2,41 +2,36 @@ package fr.fms.entities;
 import java.awt.Graphics;
 
 
-public abstract class Shape {
-	private Point center;
+public abstract class Shape<T> {
+	private Point<T> center;
 
-	public Shape(int x, int y) {
-		this.center = new Point(x, y);
+	public Shape(T x, T y) {
+		this.center = new Point<T>(x, y);
 	}
 
-	public Shape(Point center){
-		this.center = new Point(center.getX(), center.getY());
+	public Shape(Point<T> center) {
+		this.center= new Point<T>(center.getX(),center.getY());
 	}
-
-	public Point getCenter() {
+	
+	
+	public Point<T> getCenter() {
 		return center;
 	}
 
-	public void setCenter(Point center) {
+	public void setCenter(Point<T> center) {
 		this.center = center;
 	}
-
-
 
 	public double area() {
 		return 0;
 	}
 	
-	public void drawShape(Graphics g) {
-		
-	}
+	public abstract void draw(Graphics g);
 
 	@Override
 	public String toString() {
 		return "Shape [center = " + center + "]";
 	}
-
-
 
 
 }

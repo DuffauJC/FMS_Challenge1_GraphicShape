@@ -2,26 +2,21 @@ package fr.fms.entities;
 
 import java.awt.Graphics;
 
-public class Circle extends Shape{
+public class Circle<T> extends Shape<T>{
 
 	private double radius;
 
 	//constructor
-	public Circle(double radius, int x, int y) {
+	public Circle(double radius, T x, T y) {
 		super(x, y);
 		setRadius(radius);
 	}
 
-	public Circle(double radius, Point center) {
+	public Circle(double radius, Point<T> center) {
 		super(center);
 		setRadius(radius);
 	}
 
-
-	public Circle() {
-		super(1, 1);
-		setRadius(radius);	
-	}
 
 	//accessor
 	public double getRadius() {
@@ -36,16 +31,11 @@ public class Circle extends Shape{
 		}
 
 	}
-	
+
 	@Override
 	public double area() {
 		return Math.PI *this.radius*this.radius;
 		//return super.area();
-	}
-	
-	
-	public void drawShape(Graphics g) {
-		g.fillOval(getCenter().getX(), getCenter().getY(), (int)radius*2, (int)radius*2);
 	}
 
 	@Override
@@ -53,7 +43,9 @@ public class Circle extends Shape{
 		return "Circle : radius=" + radius +" "+ super.toString();
 	}
 
-
-
-
+	@Override
+	public void draw(Graphics g) {
+		g.fillOval(((Double)getCenter().getX()).intValue(), ((Double) getCenter().getY()).intValue(), (int)radius*2, (int)radius*2);
+		
+	}
 }

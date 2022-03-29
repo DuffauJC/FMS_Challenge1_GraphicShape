@@ -1,22 +1,24 @@
 package fr.fms.job;
 
 import java.util.HashMap;
+
+import java.awt.Graphics;
 import java.util.Iterator;
 import java.util.Map;
+
 import fr.fms.entities.Shape;
 import fr.fms.entities.Square;
-import fr.fms.graphic.Graphic;
 
 
-public class IJobImpl implements IJob {
-	private Map<Integer, Shape> shapes;
+public class IJobImpl<T> implements IJob<T> {
+	private Map<Integer, Shape<T>> shapes;
 	
 	public IJobImpl() {
 		shapes = new HashMap<>();
 	}
 	
 	@Override
-	public void addShape(int id, Shape shape) {
+	public void addShape(int id, Shape<T> shape) {
 		shapes.put(id,  shape);
 	}
 	
@@ -26,42 +28,52 @@ public class IJobImpl implements IJob {
 	}
 	
 	@Override
-	public Shape getShapeById(int id) {
+	public Shape<T> getShapeById(int id) {
 		return shapes.get(id);
 	}
 	
 	@Override
-	public void moveShape(int id, int x, int y) {
-		Shape shape = shapes.get(id);
+	public void moveShape(int id, T x, T y) {
+		Shape<T> shape = shapes.get(id);
 		
 		shape.getCenter().setX(x);
 		shape.getCenter().setY(y);
 	}
 	
 	@Override
-	public void drawShape() {
-		new Graphic(getShapes());
+	public void drawShapes(Graphics g) {
+		for (Shape<T> s : shapes.values()) {
+				s.draw(g);}
+			
 
 	}
 	
-	public Map<Integer, Shape> getShapes() {
+	public Map<Integer, Shape<T>> getShapes() {
 		return shapes;
 	}
 
 	@Override
 	public void displayAll() {
-		for(Shape s : shapes.values()) {
+		for(Shape<T> s : shapes.values()) {
 			System.out.println(s);
 		}
 	}
 	
 	public void squaresPerimeter() {
-		Iterator<Shape> it = shapes.values().iterator();
+		Iterator<Shape<T>> it = shapes.values().iterator();
 		while(it.hasNext()) {
-			Shape shape = it.next();
+			Shape<T> shape = it.next();
 			if(shape instanceof Square) {
-				System.out.println(shape + " périmètre = " + ((Square)shape).perimeter());
+				System.out.println(shape + " périmètre = " + ((Square<T>)shape).perimeter());
 			}
+		}
+	}
+	
+	public void calcAreas() {
+		Iterator<Shape<T>> it = shapes.values().iterator();
+		while(it.hasNext()) {
+			Shape<T> shape = it.next();
+			System.out.println(shape + " area = " + shape.area());			
 		}
 	}
 

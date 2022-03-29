@@ -2,13 +2,14 @@ package fr.fms.job;
 
 import fr.fms.entities.Shape;
 
+import java.awt.Graphics;
 
-public interface IJob {
-	public void addShape (int id, Shape shape);
+public interface IJob<T> {
+	public void addShape (int id, Shape<T> shape);
 	public void deleteShape (int id);
-	public Shape getShapeById(int id);
-	public void moveShape(int id, int x, int y);
-	public void drawShape();
+	public Shape<T> getShapeById(int id);
+	public void moveShape(int id, T x, T y);
+	public void drawShapes(Graphics g);
 	public void displayAll();
 	
 }

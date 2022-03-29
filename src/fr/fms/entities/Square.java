@@ -1,15 +1,15 @@
 package fr.fms.entities;
 import java.awt.Graphics;
 
-public class Square extends Shape {
+public class Square<T> extends Shape<T> {
 	private double side;
 	
-	public Square(double side, int x, int y) {
+	public Square(double side, T x, T y) {
 		super(x,y);
 		this.setSide(side);
 	}
 	
-	public Square(double side, Point center) {
+	public Square(double side, Point<T> center) {
 		super(center);
 		this.setSide(side);
 	}
@@ -27,11 +27,6 @@ public class Square extends Shape {
 		
 	}
 	
-	public void drawShape(Graphics g) {
-		g.drawRect(getCenter().getX(),getCenter().getY(), (int)side, (int)side);
-
-	}
-	
 	public double area() {
 		return this.side * this.side;
 	}
@@ -42,5 +37,11 @@ public class Square extends Shape {
 	
 	public String toString() {
 		return "Square : side = " + side +" "+ super.toString();
+	}
+
+	@Override
+	public void draw(Graphics g) {
+		g.drawRect(((Double)getCenter().getX()).intValue(), ((Double) getCenter().getY()).intValue(), (int)side, (int)side);
+		
 	}
 }
